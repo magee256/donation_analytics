@@ -33,7 +33,7 @@ class PercentileTracker:
         # Assume collision rare enough to not greatly affect results. 
         hashed_id = int(str(hash(name)) + zip_code)
         earliest_year = self.donor_dict.get(hashed_id, year + 1)
-        if year < earliest_year:
+        if year <= earliest_year:
             self.donor_dict[hashed_id] = year
             return False
         return True

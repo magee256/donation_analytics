@@ -12,6 +12,7 @@ class StreamingDataframe:
         'OTHER_ID': 15}
     
     def __init__(self, input_file):
+        self.decimal_count = 0
         self.input_file = input_file
         
     def __enter__(self):
@@ -19,6 +20,7 @@ class StreamingDataframe:
         return self
         
     def __exit__(self, exc_type, exc_value, traceback):
+        print(self.decimal_count)
         self.data_stream.close()
         if exc_type:
             raise
@@ -33,6 +35,8 @@ class StreamingDataframe:
                 yield data_dict
     
     def _clean_and_validate_data(self, data_dict):
+        if len(data_dict['TRANSACTION_AMT'].split('.')) > 1:
+            self.decimal_count += 1
         for header, value in data_dict.items():
             handler = getattr(self, '_handle_' + header, 
                               lambda x: (True, x))
@@ -58,7 +62,7 @@ class StreamingDataframe:
     @staticmethod
     def _handle_ZIP_CODE(field):
         # Must be at least five characters
-        zip_code = field[:5]
+        zip_code = field.strip()[:5]
         if len(zip_code) != 5:
             return False, None
         
