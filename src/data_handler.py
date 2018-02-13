@@ -20,7 +20,6 @@ class StreamingDataframe:
         return self
         
     def __exit__(self, exc_type, exc_value, traceback):
-        print(self.decimal_count)
         self.data_stream.close()
         if exc_type:
             raise
