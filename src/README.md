@@ -31,6 +31,7 @@ The `PercentileTracker` contains the data structures and logic necessary for cal
 - No (or negligible) hash collisions between CMTE_ID's
 - Sum of contributions are rounded half-up to nearest integer. This was unspecified in the README, but it seemed strange to round the percentile value and not the sum. Displaying zeros after the decimal cause the provided also caused the provided test to fail. 
 - Contributions donated more than one day after the system date will be rejected. (Extra day allowed in case of timezone issues)
+- Contributions before 1975 will be rejected (1975 was first year of data recording).
 - Only those who donated in an earlier year are repeat donors. Multiple times in one year doesn't count. 
 
 
