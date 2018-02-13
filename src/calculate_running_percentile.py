@@ -39,14 +39,6 @@ def calculate_running_percentile(arg_dict):
                     transaction_year,
                     *percentile_stats)
 
-    from collections import Counter
-    import pdb
-    c = Counter()
-    for k, v in tracker.recipient_dict.items():
-        for z in v.keys():
-            c[z] += 1
-    pdb.set_trace()
-
 
 
 if __name__ == '__main__':
