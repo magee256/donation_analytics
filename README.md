@@ -7,7 +7,7 @@ This repository contains code to generate statistics on contributions from indiv
 #### Input
 
 - a data file matching the format described [here](https://classic.fec.gov/finance/disclosure/metadata/DataDictionaryContributionsbyIndividuals.shtml)
-- a file containing one number in range (0, 100]. This number represents the donation percentile to be output.
+- a file containing one integer from 1-100. This number represents the donation percentile to be output.
 
 #### Output
 - Output data file containing the following fields:

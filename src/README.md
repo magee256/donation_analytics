@@ -24,12 +24,12 @@ The `PercentileTracker` contains the data structures and logic necessary for cal
 - `is_repeat_donor` - checks whether a given name, zip code combination has donated in a previous year (and updates `donor_dict` if not). 
 - `calculate_percentile_stats` - updates the `recipient_dict` with a new transaction and then calculates the Nth percentile, sum of transactions and transaction count.
 
-`calculate_running_percentile.py` implements reads input data using the `SreamingDataframe` object and operates on it using a `PercentileTracker` object. 
+`calculate_running_percentile.py` reads input data using the `SreamingDataframe` object and operates on it using a `PercentileTracker` object. It also implements the command line interface for the program. 
 
 ### Assumptions
 - No (or negligible) hash collisions occur between names in the same zip code when using the built-in Python hash function. 
 - No (or negligible) hash collisions between CMTE_ID's
-- Sum of contributions are rounded half-up to nearest integer. This was unspecified in the README, but it seemed strange to round the percentile value and not the sum. Displaying zeros after the decimal cause the provided also caused the provided test to fail. 
+- Sum of contributions are rounded half-up to nearest integer. This was unspecified in the README, but it seemed strange to round the percentile value and not the sum. Displaying zeros after the decimal also caused the provided test to fail. 
 - Contributions donated more than one day after the system date will be rejected. (Extra day allowed in case of timezone issues)
 - Contributions before 1975 will be rejected (1975 was first year of data recording).
 - Only those who donated in an earlier year are repeat donors. Multiple times in one year doesn't count. 
