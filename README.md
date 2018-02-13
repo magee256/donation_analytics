@@ -7,7 +7,7 @@ This repository contains code to generate statistics on contributions from indiv
 #### Input
 
 - a data file matching the format described [here](https://classic.fec.gov/finance/disclosure/metadata/DataDictionaryContributionsbyIndividuals.shtml)
-- a file containing one number from 1-100. This number represents the donation percentile to be output.
+- a file containing one number in range (0, 100]. This number represents the donation percentile to be output.
 
 #### Output
 - Output data file containing the following fields:
@@ -26,7 +26,7 @@ This repository contains code to generate statistics on contributions from indiv
 - The code requires Python 2.7 or Python >=3.2
 - The code may be run using command:```
 	python src/calculate_running_percentile.py [input data] [percentile file] [output data]```
-- Alternatively the input data and percentile file may be placed in the `input` folder and be named `itcont.txt` and `percentile.txt` respectively. Then running `run.sh` will produce the output file `output/repeat_donors.txt`. 
+- Alternatively the input data and percentile file may be placed in the `input` folder and named `itcont.txt` and `percentile.txt` respectively. Then running `run.sh` will produce the output file `output/repeat_donors.txt`. 
 
 ### Code Description
 For details on the source code and solution approach see the `src` directory's README.
