@@ -47,7 +47,7 @@ def test_calculate_percentile_stats():
             'MURICA', '2135', 1776, 2.7)
 
     # Check ordering of attributes correct
-    lst = [*stats]
+    lst = [x for x in stats]
     assert lst[0] == stats.percentile
     assert lst[1] == stats.transaction_sum
     assert lst[2] == stats.transaction_count
