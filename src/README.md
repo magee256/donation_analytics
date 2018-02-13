@@ -8,7 +8,7 @@ The files in this repository are as follows:
 - `unit_tests` - directory containing unit tests. Meant to be run with `pytest`.
 
 ### Requirements
-The code is written using only Python standard library modules. The code was tested to work with Python 2.7 or 3.6, though earlier versions should be compatible.
+The code is written using only Python standard library modules. The code was tested to work with Python 2.7 or 3.6, though earlier versions are likely compatible.
 
 The unit tests require pytest to be installed.
 

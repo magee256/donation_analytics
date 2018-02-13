@@ -23,7 +23,7 @@ This repository contains code to generate statistics on contributions from indiv
 - Data is output whenever a repeat donor is seen. The input is parsed line-by-line in streaming fashion, so a donor will need to have appeared at least twice before anything is output. 
 
 ### Running the code
-- The code requires Python 2.7 or Python >=3.2
+- The code requires Python 2.7 or Python 3.6
 - The code may be run using command:```
 	python src/calculate_running_percentile.py [input data] [percentile file] [output data]```
 - Alternatively the input data and percentile file may be placed in the `input` folder and named `itcont.txt` and `percentile.txt` respectively. Then running `run.sh` will produce the output file `output/repeat_donors.txt`. 
